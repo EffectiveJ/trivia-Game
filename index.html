@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title></title>
+    <link rel="styleSheet" href='style.css'>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+</head>
+
+<body>
+
+    <div class="container">
+
+        <h1>Trivia Game (Mythology</h1>
+
+        <p class="">Answer the Questions Correctly Before Time Runs Out</p>
+
+         <p id="timer"></p>
+         <div class="answers"></div>
+
+        <p class="question5">Hercules is know as Herakles in:</p>
+        <button class="buttons"> <span>Greek Mythology</span></button>
+        <button class="buttons"> <span>Roman Mythology</span></button>
+        <button class="buttons"> <span>Norse Mythology</span></button>
+        <button class="buttons"> <span>Persian Mythology</span></button>
+
+        <p class="question5">Question 2:</p>
+        <button class="buttons"> <span>Answer1</span></button>
+        <button class="buttons"> <span>Answer2</span></button>
+        <button class="buttons"> <span>Answer3</span></button>
+        <button class="buttons"> <span>Answer4</span></button>
+
+        <p class="question5">Question 3:</p>
+        <button class="buttons"> <span>Answer1</span></button>
+        <button class="buttons"> <span>Answer2</span></button>
+        <button class="buttons"> <span>Answer3</span></button>
+        <button class="buttons"> <span>Answer4</span></button>
+
+        <p class="question5">The deity known as TYR in Norse Mithology is commonly associated with:</p>
+        <button class="buttons"> <span>Prosperity</span></button>
+        <button class="buttons"> <span>Love</span></button>
+        <button class="buttons"> <span>Beauty</span></button>
+        <button class="buttons"> <span>War</span></button>
+
+        <p class="question5">Question 5:</p>
+        <button class="buttons"> <span>Answer1</span></button>
+        <button class="buttons"> <span>Answer2</span></button>
+        <button class="buttons"> <span>Answer3</span></button>
+        <button class="buttons"> <span>Answer4</span></button>
+    </div>
+
+    <script>
+
+        $(document).ready(function () {
+
+            var userChoice = $(".buttons").val()
+            var rightAnswers = {}
+            var correctAnswers = 0,
+                incorrectAnswers = 0,
+                incompleteAnswers = 0;
+
+            $(".buttons").on("click", function () {
+                console.log("yes")
+                check()
+            })
+
+
+
+            function check() {
+
+                if (userChoice === correctAnswers) {
+                    correctAnswers++;
+                }
+                else if (userChoice !== correctAnswers) {
+                    incorrectAnswers++;
+                }
+                else {
+                    incompleteAnswers++;
+                }
+            }
+
+            var timeLeft = 30;
+            var elem = document.getElementById('timer');
+
+            var timerId = setInterval(countdown, 1000);
+
+            function doSomething(){
+            correctAnswers=0
+            incorrectAnswers=0
+            incompleteAnswers=0
+            }
+
+            function countdown() {
+                if (timeLeft == 0) {
+                    clearTimeout(timerId);
+                    doSomething();
+                } else {
+                    elem.innerHTML = timeLeft + ' seconds remaining';
+                    timeLeft--;
+                }
+            }
+
+        });
+
+    </script>
+</body>
+
+</html>
