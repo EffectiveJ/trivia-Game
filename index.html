@@ -20,7 +20,7 @@
          <div class="answers"></div>
 
         <p class="question5">Hercules is known as Herakles in:</p>
-        <button class="buttons"> <span>Greek Mythology</span></button>
+        <button class="buttons"  id= "rightAnswer1"> <span>Greek Mythology</span></button>
         <button class="buttons"> <span>Roman Mythology</span></button>
         <button class="buttons"> <span>Norse Mythology</span></button>
         <button class="buttons"> <span>Persian Mythology</span></button>
@@ -29,25 +29,25 @@
         <button class="buttons"> <span>Thor</span></button>
         <button class="buttons"> <span>Odin</span></button>
         <button class="buttons"> <span>Siff</span></button>
-        <button class="buttons"> <span>Loki</span></button>
+        <button class="buttons" id= "rightAnswer2"> <span>Loki</span></button>
 
         <p class="question5">In Arabian Mythology, the beast known as the Roc is gigantic ____-like animal known to eat people whole:</p>
         <button class="buttons"> <span>Dragon</span></button>
         <button class="buttons"> <span>Ram</span></button>
         <button class="buttons"> <span>Snake</span></button>
-        <button class="buttons"> <span>Eagle</span></button>
+        <button class="buttons" id= "rightAnswer3"> <span>Eagle</span></button>
 
         <p class="question5">The deity known as TYR in Norse Mithology is commonly associated with:</p>
         <button class="buttons"> <span>Prosperity</span></button>
         <button class="buttons"> <span>Love</span></button>
         <button class="buttons"> <span>Beauty</span></button>
-        <button class="buttons"> <span>War</span></button>
+        <button class="buttons" id= "rightAnswer4"> <span>War</span></button>
 
         <p class="question5">According to Greek Mythology, Poseidon (Zeus's brother) had a son named ___:</p>
         <button class="buttons"> <span>Perseus</span></button>
         <button class="buttons"> <span>Triton</span></button>
         <button class="buttons"> <span>Ra</span></button>
-        <button class="buttons"> <span>Hercules</span></button>
+        <button class="buttons" id= "rightAnswer5"> <span>Hercules</span></button>
     </div>
 
     <script>
@@ -55,7 +55,7 @@
         $(document).ready(function () {
 
             var userChoice = $(".buttons").val()
-            var rightAnswers = {}
+            var rightAnswers = ["rightAnswer1", "rightAnswer2", "rightAnswer3", "rightAnswer4", "rightAnswer5"]
             var correctAnswers = 0,
                 incorrectAnswers = 0,
                 incompleteAnswers = 0;
@@ -67,7 +67,7 @@
 
             function check() {
 
-                if (userChoice === correctAnswers) {
+                if (userChoice === rightAnswers) {
                     correctAnswers++;
                 }
                 else if (userChoice !== correctAnswers) {
